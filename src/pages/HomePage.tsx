@@ -7,7 +7,7 @@ export function HomePage() {
   return (
     <div>
       <Seo
-        title="Tife Boluwatife — Product Lead & APM Candidate"
+        title="Tife Boluwatife, Product Lead & APM Candidate"
         description="Portfolio of Olusina Boluwatife: CS First Class, Forensic Tech Analyst at Deloitte. Building Unifeed (75 users validated) and BELEARN. Open to APM & Junior PM roles."
         ogDescription="Product Lead & CS graduate turning real user problems into shipped, validated solutions."
       />
@@ -94,7 +94,7 @@ export function HomePage() {
       {/* Work Index */}
       <section id="work" className="max-w-6xl mx-auto px-6 py-24 scroll-mt-20">
         <div className="flex items-baseline justify-between border-b border-foreground/20 pb-4 mb-12">
-          <h2 className="font-mono text-xs uppercase tracking-widest">Projects (01—02)</h2>
+          <h2 className="font-mono text-xs uppercase tracking-widest">Projects (01 / 02)</h2>
           <span className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
             Sort: Impact / Status
           </span>
@@ -105,11 +105,11 @@ export function HomePage() {
             num="01"
             slug="/work/unifeed"
             title="Unifeed"
-            tagline="A unified social media platform that cut platform-switching time roughly in half — built end to end and tested with 75 real users."
-            role="Product Lead — End to End"
+            tagline="A unified social media platform that cut platform-switching time roughly in half, built end to end and tested with 75 real users."
+            role="Product Lead, End to End"
             status="Shipped"
             statusTone="accent"
-            timeline="Jan 2024 — Mar 2025"
+            timeline="Jan 2024 to Mar 2025"
             image={unifeedHome}
             imageAlt="Unifeed unified feed across desktop and mobile."
             metrics={[
@@ -122,11 +122,11 @@ export function HomePage() {
             num="02"
             slug="/work/welearn"
             title="BELEARN"
-            tagline="An inclusive tutoring marketplace covering SEN learners and African languages — 1,100+ waitlist signups across 28 countries, pre any paid acquisition."
+            tagline="An inclusive tutoring marketplace covering SEN learners and African languages. 1,100+ waitlist signups across 28 countries, pre any paid acquisition."
             role="Founder & Product Lead"
             status="Pre-launch"
             statusTone="muted"
-            timeline="2025 — Present"
+            timeline="2025 to Present"
             image={belearnHero}
             imageAlt="BELEARN landing page with waitlist signup."
             metrics={[
@@ -153,12 +153,12 @@ export function HomePage() {
           <div className="lg:col-span-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p className="text-foreground">
               I&apos;m more interested in <em className="italic text-accent not-italic font-medium">why</em> something
-              gets built than how — though I can do both.
+              gets built than how, though I can do both.
             </p>
             <p>
               At Deloitte I do forensic data analysis on financial crime cases, which taught me how to make sense of
               complexity and communicate it clearly. Before that I spent three years tutoring students from age 6 to
-              university level — which is where BELEARN came from. Unifeed came from a problem I lived with daily.
+              university level, which is where BELEARN came from. Unifeed came from a problem I lived with daily.
             </p>
             <div className="pt-4">
               <Link

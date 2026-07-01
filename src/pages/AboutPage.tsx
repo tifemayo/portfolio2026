@@ -6,9 +6,9 @@ export function AboutPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-24">
       <Seo
-        title="About — Tife Boluwatife"
+        title="About · Tife Boluwatife"
         description="Olusina Boluwatife (Tife): First Class CS graduate from Aston, Forensic Tech Analyst at Deloitte, founder of Unifeed and BELEARN. Moving into APM / Junior PM roles."
-        ogDescription="Nice to meet you — I'm Tife. Builder, analyst, future PM."
+        ogDescription="Nice to meet you. I'm Tife. Builder, analyst, future PM."
       />
       <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8 animate-reveal">
         File 002 · About
@@ -16,7 +16,7 @@ export function AboutPage() {
       <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
         <div className="lg:col-span-7 animate-reveal">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] mb-10 text-balance">
-            Nice to meet you — I&apos;m Tife.
+            Nice to meet you. I&apos;m Tife.
           </h1>
           <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
             <p>
@@ -25,13 +25,13 @@ export function AboutPage() {
             </p>
             <p className="text-muted-foreground">
               I&apos;ve always been more interested in <em className="text-accent not-italic font-medium">why</em>{" "}
-              something gets built than how — though I can do both. I started building Unifeed because I was genuinely
+              something gets built than how, though I can do both. I started building Unifeed because I was genuinely
               frustrated by the problem. I&apos;m building BELEARN because I&apos;ve seen the gap it fills with my own
               eyes.
             </p>
             <p className="text-muted-foreground">
               Outside of product, I&apos;ve tutored students from age 6 to university level, contributed to product
-              strategy inside Deloitte, and spent time doing forensic data analysis on financial crime cases — which
+              strategy inside Deloitte, and spent time doing forensic data analysis on financial crime cases, which
               taught me how to make sense of complexity and communicate it clearly. Both useful skills for a PM.
             </p>
             <p>

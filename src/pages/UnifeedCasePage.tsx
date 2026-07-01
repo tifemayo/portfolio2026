@@ -110,7 +110,7 @@ export function UnifeedCasePage() {
               {
                 n: "01",
                 title: "Primary research",
-                body: "A survey of 75 people. Two thirds reported four or more hours a day on social media. 96% used no management tool at all — the existing tools were seen as irrelevant, not merely unappealing.",
+                body: "A survey of 75 people. Two thirds reported four or more hours a day on social media. 96% used no management tool at all: the existing tools were seen as irrelevant, not merely unappealing.",
               },
               {
                 n: "02",
@@ -328,7 +328,7 @@ export function UnifeedCasePage() {
                 </span>,
               ],
             ]}
-            caption="TBT missed by 10ms. Reported here rather than quietly dropped — one honest miss out of five."
+            caption="TBT missed by 10ms. Reported here rather than quietly dropped. One honest miss out of five."
           />
         </CaseSection>
 

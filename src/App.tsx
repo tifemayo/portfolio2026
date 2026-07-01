@@ -6,10 +6,10 @@ import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { UnifeedCasePage } from "./pages/UnifeedCasePage";
-import { WeLearnCasePage } from "./pages/WeLearnCasePage";
+import { WeLearnCasePage } from "./pages/BeLearnCasePage";
 
 const defaultSeo = {
-  title: "Tife Boluwatife — Product Lead & APM Candidate",
+  title: "Tife Boluwatife, Product Lead & APM Candidate",
   description:
     "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and BeLearn. Open to APM & Junior PM roles.",
 };

@@ -5,7 +5,7 @@ import { Seo } from "../components/Seo";
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Enter a valid email").max(255),
-  message: z.string().trim().min(10, "Tell me a little more — at least 10 characters").max(2000),
+  message: z.string().trim().min(10, "Tell me a little more (at least 10 characters)").max(2000),
 });
 
 export function ContactPage() {
@@ -26,7 +26,7 @@ export function ContactPage() {
     }
     setErrors({});
     const subject = encodeURIComponent(`Portfolio enquiry from ${parsed.data.name}`);
-    const body = encodeURIComponent(`${parsed.data.message}\n\n— ${parsed.data.name} (${parsed.data.email})`);
+    const body = encodeURIComponent(`${parsed.data.message}\n\n${parsed.data.name} (${parsed.data.email})`);
     window.location.href = `mailto:tifemayo25@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
   }
@@ -34,7 +34,7 @@ export function ContactPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-24">
       <Seo
-        title="Contact — Tife Boluwatife"
+        title="Contact · Tife Boluwatife"
         description="Get in touch with Tife Boluwatife, APM / Junior PM candidate and builder of Unifeed and BeLearn."
         ogDescription="Let's talk. My inbox is open."
       />
@@ -47,7 +47,7 @@ export function ContactPage() {
             Let&apos;s talk.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-md text-pretty">
-            Whether you&apos;re hiring, building something interesting, or just want to connect — my inbox is open.
+            Whether you&apos;re hiring, building something interesting, or just want to connect: my inbox is open.
           </p>
           <div className="space-y-3 font-mono text-sm">
             <ContactRow label="Email" value="tifemayo25@gmail.com" href="mailto:tifemayo25@gmail.com" />
@@ -109,7 +109,7 @@ export function ContactPage() {
               type="submit"
               className="w-full py-4 bg-foreground text-background font-mono text-xs uppercase tracking-widest hover:bg-accent transition-colors"
             >
-              {sent ? "Sent — check your mail client" : "Send message →"}
+              {sent ? "Sent. Check your mail client." : "Send message →"}
             </button>
           </form>
         </div>
