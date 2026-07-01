@@ -11,7 +11,7 @@ import { WeLearnCasePage } from "./pages/WeLearnCasePage";
 const defaultSeo = {
   title: "Tife Boluwatife — Product Lead & APM Candidate",
   description:
-    "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and WeLearn. Open to APM & Junior PM roles.",
+    "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and BeLearn. Open to APM & Junior PM roles.",
 };
 
 export function App() {

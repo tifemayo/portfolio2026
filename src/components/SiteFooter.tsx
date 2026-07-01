@@ -43,10 +43,10 @@ export function SiteFooter() {
               Projects
             </div>
             <Link to="/work/unifeed" className="block text-sm font-medium hover:text-accent transition-colors">
-              01 — Unifeed
+              01 / Unifeed
             </Link>
             <Link to="/work/welearn" className="block text-sm font-medium hover:text-accent transition-colors">
-              02 — BELEARN
+              02 / BeLearn
             </Link>
             <a
               href="/Tife_Boluwatife_CV.pdf"
@@ -60,7 +60,7 @@ export function SiteFooter() {
         </div>
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
           <div className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">
-            © 2026 Olusina Boluwatife — First Class Honours, Computer Science (Aston)
+            © 2026 Olusina Boluwatife · First Class Honours, Computer Science (Aston)
           </div>
           <div className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">
             Forensic Tech Analyst, Deloitte

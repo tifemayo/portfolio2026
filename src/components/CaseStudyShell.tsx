@@ -204,3 +204,65 @@ export function ProductMockCard({
     </div>
   );
 }
+
+export function ResultsTable({
+  label,
+  columns,
+  rows,
+  caption,
+}: {
+  label: string;
+  columns: string[];
+  rows: ReactNode[][];
+  caption?: string;
+}) {
+  return (
+    <div className="border border-border bg-paper overflow-hidden">
+      <div className="border-b border-border px-4 py-2 bg-secondary/40">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          {label}
+        </span>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              {columns.map((col) => (
+                <th
+                  key={col}
+                  className="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-normal"
+                >
+                  {col}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i} className="border-b border-border last:border-0 hover:bg-secondary/20 transition-colors">
+                {row.map((cell, j) => (
+                  <td key={j} className="px-4 py-3 leading-relaxed">
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {caption && (
+        <div className="px-4 py-3 border-t border-border font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          {caption}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function ConfirmTodo({ note }: { note: string }) {
+  return (
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-accent/10 border border-accent/25 text-accent font-mono text-[9px] uppercase tracking-widest ml-1.5 align-middle">
+      TODO · {note}
+    </span>
+  );
+}

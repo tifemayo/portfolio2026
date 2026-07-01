@@ -1,6 +1,7 @@
 import {
   CaseSection,
   CaseStudyShell,
+  ConfirmTodo,
 } from "../components/CaseStudyShell";
 import { Seo } from "../components/Seo";
 import belearnHero from "../assets/belearn-hero.png";
@@ -10,21 +11,21 @@ export function WeLearnCasePage() {
   return (
     <>
       <Seo
-        title="BELEARN — Inclusive tutoring marketplace · Tife Boluwatife"
-        description="Case study: building BELEARN, an inclusive tutoring marketplace covering SEN learners and African languages. 1,100+ waitlist signups across 28 countries, pre-launch at belearn.org."
-        ogTitle="BELEARN — Case Study · Tife Boluwatife"
+        title="BeLearn: an inclusive tutoring marketplace · Tife Boluwatife"
+        description="Case study: building BeLearn, a managed tutoring marketplace for SEN learners and underrepresented subjects. 1,100+ waitlist signups across 28 countries, pre-launch at belearn.org."
+        ogTitle="BeLearn Case Study · Tife Boluwatife"
         ogDescription="The tutoring platform I wish had existed when I was teaching."
       />
       <CaseStudyShell
-        fileNumber="02 / BELEARN"
+        fileNumber="02 / BeLearn"
         status="Pre-launch · 1,100+ waitlist"
         statusTone="muted"
-        title="BELEARN: an inclusive tutoring marketplace I had to build."
-        subtitle="The tutoring platform I wish had existed when I was teaching — for SEN learners and underrepresented subjects like African languages."
+        title="BeLearn: an inclusive tutoring marketplace I had to build."
+        subtitle="The tutoring platform I wish had existed when I was teaching. For SEN learners, underrepresented subjects, and the families the market keeps overlooking."
         meta={[
           { label: "Role", value: "Founder & Product Lead" },
-          { label: "Status", value: "Pre-launch · website live at belearn.org" },
-          { label: "Early Traction", value: "1,100+ waitlist signups across 28 countries", emphasis: true },
+          { label: "Status", value: "Pre-launch · live at belearn.org" },
+          { label: "Traction", value: "1,100+ waitlist signups across 28 countries", emphasis: true },
           {
             label: "Scope",
             value: "Discovery, two-sided PRD, brand, marketplace strategy, accessibility model",
@@ -33,10 +34,10 @@ export function WeLearnCasePage() {
         annotation={{
           note: "Note 02 / Why",
           quote:
-            "I watched students light up when the right person explained something the right way. BELEARN is about making that match happen.",
+            "I watched students light up when the right person explained something the right way. BeLearn is about making that match happen.",
         }}
         nextHref="/work/unifeed"
-        nextLabel="01 — Unifeed"
+        nextLabel="01 / Unifeed"
       >
         <figure className="border border-border bg-paper overflow-hidden">
           <div className="border-b border-border px-4 py-2 flex items-center justify-between bg-secondary/40">
@@ -52,93 +53,198 @@ export function WeLearnCasePage() {
           </div>
           <img
             src={belearnHero}
-            alt="BELEARN landing page — 'Tutoring that sees everyone' with waitlist signup form."
+            alt="BeLearn landing page showing 'Tutoring that sees everyone' hero with waitlist signup form."
             className="w-full block"
             loading="lazy"
           />
           <figcaption className="px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border">
-            Live at belearn.org — 1,100+ waitlist signups across 28 countries, pre paid acquisition.
+            Live at belearn.org. 1,100+ waitlist signups across 28 countries, before any paid acquisition.
           </figcaption>
         </figure>
 
         <CaseSection num="01" title="The Problem">
           <p>
-            Finding a good tutor is hard — especially if you&apos;re a student with SEN needs, or if you want to learn
-            something outside the mainstream curriculum like an African language. Existing platforms don&apos;t serve
-            those users well.
+            Tutoring quietly fails the very families who need it most. The same four frustrations kept coming
+            up: a tutor who does not really understand the child's pace, background, or way of learning; a
+            price that puts good tutoring out of reach; sessions the child sits through and still leaves
+            confused; and no way to find someone who understands your culture, or who can teach a home
+            language.
           </p>
           <p>
-            I know this firsthand: I spent three years tutoring students aged 6–18 in coding and computer science, and
-            saw exactly where discovery and matching break down.
+            The model that dominates the category, a marketplace that lists tutors and lets parents guess,
+            hands every one of those problems straight back to the parent.
           </p>
         </CaseSection>
 
-        <CaseSection num="02" title="Three Core Bets">
+        <CaseSection num="02" title="The Product Thesis">
+          <p>
+            BeLearn's central bet is simple to say and hard to execute: managed, not marketplace. Rather than
+            dropping parents in front of a search box, BeLearn owns the match. A hand-matched tutor, a free
+            first session to take the risk out of fit, then ongoing sessions with progress tracked along the
+            way.
+          </p>
+          <p>
+            This is a real strategic trade-off I hold consciously. A marketplace scales cheaply but optimises
+            for transactions. BeLearn optimises for match quality and outcomes, which is harder to scale and
+            thinner on margin early on. I accept that, because it is the only model that actually answers the
+            four frustrations above, and it is far more defensible once it works.
+          </p>
+          <p>
+            Everything ladders up to one line:{" "}
+            <span className="text-accent font-medium">
+              your potential should not be limited by your postcode, your background, or your budget.
+            </span>
+          </p>
           <div className="grid md:grid-cols-3 gap-px bg-border border border-border mt-2">
             {[
               {
                 n: "01",
-                title: "Breadth of subjects",
-                body: "Mainstream (Maths, English, Sciences) alongside African languages — which no mainstream platform covers.",
+                title: "Relatability",
+                body: "Globally sourced tutors who understand a learner's world, including the cultures and home languages (African languages among them) that mainstream platforms do not serve.",
               },
               {
                 n: "02",
-                title: "SEN inclusion",
-                body: "Students with special educational needs are matched to tutors with relevant specialist training, not just whoever's available.",
+                title: "Smart matching",
+                body: "Pairing on how a student learns best, not merely on who happens to be free.",
               },
               {
                 n: "03",
-                title: "Accessibility-first",
-                body: "The platform is designed so that no learner feels like an afterthought — from search to session.",
+                title: "Individual analysis",
+                body: "Tutors who diagnose the specific areas a learner struggles with. This extends naturally into SEN-aware matching.",
               },
             ].map((b) => (
               <div key={b.n} className="bg-background p-6 space-y-3">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Bet {b.n}
+                  Differentiator {b.n}
                 </div>
-                <div className="font-semibold">{b.title}</div>
+                <div className="font-semibold text-sm">{b.title}</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{b.body}</p>
               </div>
             ))}
           </div>
         </CaseSection>
 
-        <CaseSection num="03" title="Where I am now">
+        <CaseSection num="03" title="Discovery and Validation">
           <p>
-            Core user journeys are defined across two user types (learners and tutors). PRD written. Website live at{" "}
-            <a
-              href="https://belearn.org"
-              target="_blank"
-              rel="noopener"
-              className="text-accent underline underline-offset-4 decoration-accent/40 hover:decoration-accent"
-            >
-              belearn.org
-            </a>{" "}
-            with 1,100+ waitlist signups across 28 countries before any paid acquisition. Booking flow and tutor onboarding
-            are the next milestones.
+            The waitlist is not a vanity number. It is a live demand-validation instrument. 1,100+ signups
+            from 28 countries before launch
+            <ConfirmTodo note="add channel mix, e.g. organic vs paid" />
+            is strong evidence that the relatability and affordability wedge lands internationally, not just
+            at home.
+          </p>
+          <p>
+            My read on the problem also comes from lived experience: I have taught coders aged 6 to 18, and
+            I watched at close range how badly one-size-fits-all instruction lets down the learners who do
+            not fit the default mould.
+            <ConfirmTodo note="add any survey or interview numbers if available" />
           </p>
         </CaseSection>
 
-        <CaseSection num="04" title="Why this matters to me">
+        <CaseSection num="04" title="Product Thinking">
           <p>
-            I didn&apos;t come up with BELEARN in a vacuum. I taught coding to kids who struggled in traditional
-            classroom environments. I watched students light up when the right person explained something the right
-            way.{" "}
-            <span className="text-accent font-medium">
-              BELEARN is about making that match happen — for every learner, not just the easy ones to serve.
-            </span>
+            Even before launch, the operating model demands the same reasoning a PM does every day.
+          </p>
+          <div className="space-y-px bg-border border border-border mt-2">
+            {[
+              {
+                label: "Roadmap and sequencing",
+                body: "Validate willingness through the waitlist. Prove the match by hand first with a free first session. Learn what a good match really means from those early sessions. Then systematise the matching into product. The riskiest assumption (will families actually commit) gets de-risked before I spend on the expensive matching infrastructure.",
+              },
+              {
+                label: "Two-sided market",
+                body: "BeLearn is actively recruiting tutors, so I am reasoning about both sides at once: demand quality against supply liquidity, and the safeguarding and quality bar a managed model has no choice but to own.",
+              },
+              {
+                label: "Stakeholders and compliance",
+                body: "Pairing adults with children, many of them minors, forces early thinking about safeguarding, DBS-style vetting, and family data protection. That is the founder's version of the Business, Legal, and Compliance inputs a PM coordinates.",
+              },
+            ].map((block) => (
+              <div key={block.label} className="bg-background p-6 space-y-2">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                  {block.label}
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  {block.body}
+                  {block.label === "Stakeholders and compliance" && (
+                    <ConfirmTodo note="add specific vetting and safeguarding steps defined so far" />
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+        </CaseSection>
+
+        <CaseSection num="05" title="Sample Requirement">
+          <p>
+            Writing requirements is not a formality. It is how you expose what you have not thought through.
+            Here is one from BeLearn:
+          </p>
+          <div className="border border-border bg-paper overflow-hidden mt-2">
+            <div className="border-b border-border px-4 py-2 bg-secondary/40">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                Feature · Hand-matched tutor recommendation (v1, manual-first)
+              </span>
+            </div>
+            <div className="p-6 md:p-8 space-y-6">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-2">
+                  User story
+                </div>
+                <p className="text-sm leading-relaxed text-foreground/80 italic">
+                  As a parent, I want my child matched to a tutor suited to their level, goals, learning
+                  style, and cultural or linguistic needs, so that I can trust the fit without vetting tutors
+                  myself.
+                </p>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
+                  Acceptance criteria
+                </div>
+                <ul className="space-y-3 text-sm text-foreground/80">
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-0.5 shrink-0 font-bold">·</span>
+                    <span>
+                      Given a completed intake covering subject, goals, schedule, and learning preferences,
+                      when a match is proposed, the parent receives a tutor profile with a stated rationale
+                      for why this tutor.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-0.5 shrink-0 font-bold">·</span>
+                    <span>A free first session can be booked before any commitment is made.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-0.5 shrink-0 font-bold">·</span>
+                    <span>
+                      If no suitable tutor exists, the parent is told honestly and queued. No auto-assignment
+                      of a poor-fit tutor.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </CaseSection>
+
+        <CaseSection num="06" title="Where It Stands">
+          <p>
+            Before launch, BeLearn has already proved international demand for a model the incumbents do not
+            offer. The near-term priorities are clear: convert the waitlist into activated first sessions,
+            instrument match quality so I can prove the hand-match beats self-serve, and turn the manual
+            matching logic into something repeatable.{" "}
+            <ConfirmTodo note="add any early pilot sessions, conversion figures, or tutor sign-up numbers" />
           </p>
         </CaseSection>
 
         <figure className="border border-border bg-paper overflow-hidden">
           <img
             src={belearnFeature}
-            alt="BELEARN — Learn anything Be anything section showing global relatable tutors and smart matching."
+            alt="BeLearn feature section showing global relatable tutors and smart matching paired by how each learner learns best."
             className="w-full block"
             loading="lazy"
           />
           <figcaption className="px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border">
-            Positioning · global, relatable tutors paired by how each learner learns best.
+            Positioning: global, relatable tutors paired by how each learner learns best.
           </figcaption>
         </figure>
 

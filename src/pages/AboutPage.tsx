@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
+import { ConfirmTodo } from "../components/CaseStudyShell";
 
 export function AboutPage() {
   return (
@@ -36,6 +37,16 @@ export function AboutPage() {
             <p>
               I&apos;m currently looking for <span className="font-semibold">APM or Junior PM roles</span> where I can
               bring structure, empathy, and a builder&apos;s mindset to a team working on something that matters.
+            </p>
+            <p className="text-muted-foreground">
+              I&apos;m also deliberately building the formal vocabulary of the discipline. Two Product School
+              micro-certificates under my belt
+              <ConfirmTodo note="confirm exact titles, e.g. Product Management and Product Strategy" />
+              , and I&apos;m currently working through Marty Cagan&apos;s{" "}
+              <em className="text-foreground not-italic font-medium">Inspired</em>, which is reshaping how I
+              think about outcome-driven teams and the difference between shipping features and delivering
+              value. The habit I care about most is closing the loop between what the book argues and what my
+              own products do.
             </p>
           </div>
 
@@ -90,7 +101,15 @@ export function AboutPage() {
                 ["Discovery", "25+ interviews before code"],
                 ["Scope", "Cuts features that don't earn it"],
                 ["Analysis", "Financial crime data, daily"],
-                ["Empathy", "3 yrs tutoring, ages 6–18"],
+                ["Empathy", "3 yrs tutoring, ages 6 to 18"],
+              ]}
+            />
+            <FactBlock
+              label="Sharpening the craft"
+              items={[
+                ["Certificates", "2 Product School micro-certs"],
+                ["Reading", "Inspired, Marty Cagan"],
+                ["Focus", "Book to product decisions"],
               ]}
             />
           </div>

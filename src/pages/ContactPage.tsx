@@ -35,7 +35,7 @@ export function ContactPage() {
     <div className="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-24">
       <Seo
         title="Contact — Tife Boluwatife"
-        description="Get in touch with Tife Boluwatife — APM / Junior PM candidate, builder of Unifeed and WeLearn."
+        description="Get in touch with Tife Boluwatife, APM / Junior PM candidate and builder of Unifeed and BeLearn."
         ogDescription="Let's talk. My inbox is open."
       />
       <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8 animate-reveal">
@@ -53,7 +53,7 @@ export function ContactPage() {
             <ContactRow label="Email" value="tifemayo25@gmail.com" href="mailto:tifemayo25@gmail.com" />
             <ContactRow label="LinkedIn" value="linkedin.com/in/tifemayo" href="https://linkedin.com/in/tifemayo" />
             <ContactRow label="CV" value="Download PDF ↗" href="/Tife_Boluwatife_CV.pdf" />
-            <ContactRow label="WeLearn" value="belearn.org ↗" href="https://belearn.org" />
+            <ContactRow label="BeLearn" value="belearn.org ↗" href="https://belearn.org" />
           </div>
         </div>
 
