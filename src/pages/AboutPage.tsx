@@ -7,7 +7,7 @@ export function AboutPage() {
     <div className="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-24">
       <Seo
         title="About · Tife Boluwatife"
-        description="Olusina Boluwatife (Tife): First Class CS graduate from Aston, Forensic Tech Analyst at Deloitte, founder of Unifeed and BELEARN. Moving into APM / Junior PM roles."
+        description="Olusina Boluwatife (Tife): First Class CS graduate from Aston, Forensic Tech Analyst at Deloitte, founder of Unifeed and BELEARN. Moving into Product Management roles."
         ogDescription="Nice to meet you. I'm Tife. Builder, analyst, future PM."
       />
       <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8 animate-reveal">
@@ -35,7 +35,7 @@ export function AboutPage() {
               taught me how to make sense of complexity and communicate it clearly. Both useful skills for a PM.
             </p>
             <p>
-              I&apos;m currently looking for <span className="font-semibold">APM or Junior PM roles</span> where I can
+              I&apos;m currently looking for <span className="font-semibold">Product Management roles</span> where I can
               bring structure, empathy, and a builder&apos;s mindset to a team working on something that matters.
             </p>
             <p className="text-muted-foreground">
@@ -84,7 +84,7 @@ export function AboutPage() {
                 ["Role", "Forensic Tech Analyst, Deloitte"],
                 ["Building", "Unifeed · BELEARN"],
                 ["Location", "United Kingdom"],
-                ["Open to", "APM / Junior PM"],
+                ["Open to", "Product Management"],
               ]}
             />
             <FactBlock

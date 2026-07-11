@@ -7,8 +7,8 @@ export function HomePage() {
   return (
     <div>
       <Seo
-        title="Tife Boluwatife, Product Lead & APM Candidate"
-        description="Portfolio of Olusina Boluwatife: CS First Class, Forensic Tech Analyst at Deloitte. Building Unifeed (75 users validated) and BELEARN. Open to APM & Junior PM roles."
+        title="Tife Boluwatife, Product Lead & PM Candidate"
+        description="Portfolio of Olusina Boluwatife: CS First Class, Forensic Tech Analyst at Deloitte. Building Unifeed (75 users validated) and BELEARN. Open to Product Management roles."
         ogDescription="Product Lead & CS graduate turning real user problems into shipped, validated solutions."
       />
       {/* Hero */}
@@ -23,7 +23,7 @@ export function HomePage() {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[44ch] mb-10 text-pretty">
               Product Lead and Computer Science graduate turning complex user friction into shipped, validated solutions.
-              Currently a Forensic Technology Analyst at Deloitte. Open to APM &amp; Junior PM roles.
+              Currently a Forensic Technology Analyst at Deloitte. Open to Product Management roles.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

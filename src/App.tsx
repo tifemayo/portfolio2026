@@ -9,9 +9,9 @@ import { UnifeedCasePage } from "./pages/UnifeedCasePage";
 import { WeLearnCasePage } from "./pages/BeLearnCasePage";
 
 const defaultSeo = {
-  title: "Tife Boluwatife, Product Lead & APM Candidate",
+  title: "Tife Boluwatife, Product Lead & PM Candidate",
   description:
-    "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and BeLearn. Open to APM & Junior PM roles.",
+    "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and BeLearn. Open to Product Management roles.",
 };
 
 export function App() {

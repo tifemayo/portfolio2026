@@ -35,7 +35,7 @@ export function ContactPage() {
     <div className="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-24">
       <Seo
         title="Contact · Tife Boluwatife"
-        description="Get in touch with Tife Boluwatife, APM / Junior PM candidate and builder of Unifeed and BeLearn."
+        description="Get in touch with Tife Boluwatife, Product Management candidate and builder of Unifeed and BeLearn."
         ogDescription="Let's talk. My inbox is open."
       />
       <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8 animate-reveal">
