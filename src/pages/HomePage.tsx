@@ -45,7 +45,7 @@ export function HomePage() {
           <div className="lg:col-span-4 flex flex-col justify-end">
             <div className="space-y-8 border-l border-border pl-8">
               <div className="animate-reveal" style={{ animationDelay: "150ms" }}>
-                <div className="text-4xl md:text-5xl font-bold tabular-nums tracking-tighter">1,100+</div>
+                <div className="text-4xl md:text-5xl font-bold tabular-nums tracking-tighter">100+</div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
                   BELEARN waitlist · 28 countries
                 </div>
@@ -122,7 +122,7 @@ export function HomePage() {
             num="02"
             slug="/work/welearn"
             title="BELEARN"
-            tagline="An inclusive tutoring marketplace covering SEN learners and African languages. 1,100+ waitlist signups across 28 countries, pre any paid acquisition."
+            tagline="An inclusive tutoring marketplace covering SEN learners and African languages. 100+ waitlist signups across 28 countries, pre any paid acquisition."
             role="Founder & Product Lead"
             status="Pre-launch"
             statusTone="muted"
@@ -130,7 +130,7 @@ export function HomePage() {
             image={belearnHero}
             imageAlt="BELEARN landing page with waitlist signup."
             metrics={[
-              { value: "1,100+", label: "Waitlist users" },
+              { value: "100+", label: "Waitlist users" },
               { value: "28", label: "Countries" },
               { value: "£0", label: "Ad spend" },
             ]}

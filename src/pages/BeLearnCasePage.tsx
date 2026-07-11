@@ -12,20 +12,20 @@ export function WeLearnCasePage() {
     <>
       <Seo
         title="BeLearn: an inclusive tutoring marketplace · Tife Boluwatife"
-        description="Case study: building BeLearn, a managed tutoring marketplace for SEN learners and underrepresented subjects. 1,100+ waitlist signups across 28 countries, pre-launch at belearn.org."
+        description="Case study: building BeLearn, a managed tutoring marketplace for SEN learners and underrepresented subjects. 100+ waitlist signups across 28 countries, pre-launch at belearn.org."
         ogTitle="BeLearn Case Study · Tife Boluwatife"
         ogDescription="The tutoring platform I wish had existed when I was teaching."
       />
       <CaseStudyShell
         fileNumber="02 / BeLearn"
-        status="Pre-launch · 1,100+ waitlist"
+        status="Pre-launch · 100+ waitlist"
         statusTone="muted"
         title="BeLearn: an inclusive tutoring marketplace I had to build."
         subtitle="The tutoring platform I wish had existed when I was teaching. For SEN learners, underrepresented subjects, and the families the market keeps overlooking."
         meta={[
           { label: "Role", value: "Founder & Product Lead" },
           { label: "Status", value: "Pre-launch · live at belearn.org" },
-          { label: "Traction", value: "1,100+ waitlist signups across 28 countries", emphasis: true },
+          { label: "Traction", value: "100+ waitlist signups across 28 countries", emphasis: true },
           {
             label: "Scope",
             value: "Discovery, two-sided PRD, brand, marketplace strategy, accessibility model",
@@ -58,7 +58,7 @@ export function WeLearnCasePage() {
             loading="lazy"
           />
           <figcaption className="px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border">
-            Live at belearn.org. 1,100+ waitlist signups across 28 countries, before any paid acquisition.
+            Live at belearn.org. 100+ waitlist signups across 28 countries, before any paid acquisition.
           </figcaption>
         </figure>
 
@@ -126,7 +126,7 @@ export function WeLearnCasePage() {
 
         <CaseSection num="03" title="Discovery and Validation">
           <p>
-            The waitlist is not a vanity number. It is a live demand-validation instrument. 1,100+ signups
+            The waitlist is not a vanity number. It is a live demand-validation instrument. 100+ signups
             from 28 countries before launch
             <ConfirmTodo note="add channel mix, e.g. organic vs paid" />
             is strong evidence that the relatability and affordability wedge lands internationally, not just
