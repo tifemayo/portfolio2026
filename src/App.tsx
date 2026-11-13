@@ -1,18 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { NotFoundPage } from "./components/NotFoundPage";
 import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
-import { ContactPage } from "./pages/ContactPage";
 import { UnifeedCasePage } from "./pages/UnifeedCasePage";
-import { WeLearnCasePage } from "./pages/BeLearnCasePage";
-
-const defaultSeo = {
-  title: "Tife Boluwatife, Product Lead & PM Candidate",
-  description:
-    "Portfolio of Olusina Boluwatife (Tife): CS First Class, Forensic Tech Analyst at Deloitte, building Unifeed and BeLearn. Open to Product Management roles.",
-};
+import { BeLearnCasePage } from "./pages/BeLearnCasePage";
 
 export function App() {
   return (
@@ -21,10 +13,12 @@ export function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="contact" element={<ContactPage />} />
             <Route path="work/unifeed" element={<UnifeedCasePage />} />
-            <Route path="work/welearn" element={<WeLearnCasePage />} />
+            <Route path="work/belearn" element={<BeLearnCasePage />} />
+            {/* Old addresses still work */}
+            <Route path="work/welearn" element={<Navigate to="/work/belearn" replace />} />
+            <Route path="about" element={<Navigate to="/#about" replace />} />
+            <Route path="contact" element={<Navigate to="/#contact" replace />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
@@ -32,5 +26,3 @@ export function App() {
     </AppErrorBoundary>
   );
 }
-
-export { defaultSeo };

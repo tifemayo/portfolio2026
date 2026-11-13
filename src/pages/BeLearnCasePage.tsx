@@ -7,39 +7,41 @@ import { Seo } from "../components/Seo";
 import belearnHero from "../assets/belearn-hero.png";
 import belearnFeature from "../assets/belearn-feature.png";
 
-export function WeLearnCasePage() {
+export function BeLearnCasePage() {
   return (
     <>
       <Seo
-        title="BeLearn: an inclusive tutoring marketplace · Tife Boluwatife"
-        description="Case study: building BeLearn, a managed tutoring marketplace for SEN learners and underrepresented subjects. 100+ waitlist signups across 28 countries, pre-launch at belearn.org."
-        ogTitle="BeLearn Case Study · Tife Boluwatife"
-        ogDescription="The tutoring platform I wish had existed when I was teaching."
+        title="BeLearn: a STEM and AI learning platform for young people · Tife Olusina"
+        description="Case study: building BeLearn, a STEM and AI learning platform for young people, from discovery and customer journey mapping to a 100+ waitlist."
+        ogTitle="BeLearn Case Study · Tife Olusina"
+        ogDescription="A STEM and AI learning platform for young people, from discovery to a 100+ waitlist."
       />
       <CaseStudyShell
-        fileNumber="02 / BeLearn"
+        fileNumber="BeLearn"
         status="Pre-launch · 100+ waitlist"
         statusTone="muted"
-        title="BeLearn: an inclusive tutoring marketplace I had to build."
-        subtitle="The tutoring platform I wish had existed when I was teaching. For SEN learners, underrepresented subjects, and the families the market keeps overlooking."
+        title="BeLearn: a STEM and AI learning platform for young people."
+        subtitle="An online learning platform giving the younger generation STEM knowledge and AI skills, taken from discovery and customer journey mapping to a 100+ waitlist."
         meta={[
-          { label: "Role", value: "Founder & Product Lead" },
+          { label: "Role", value: "Co-Founder & Product Lead" },
+          { label: "Timeline", value: "May 2026 to present" },
           { label: "Status", value: "Pre-launch · live at belearn.org" },
-          { label: "Traction", value: "100+ waitlist signups across 28 countries", emphasis: true },
+          { label: "Traction", value: "100+ waitlist signups before launch", emphasis: true },
           {
             label: "Scope",
-            value: "Discovery, two-sided PRD, brand, marketplace strategy, accessibility model",
+            value:
+              "Discovery, customer journey mapping, unit economics, agentic AI outreach, LLM matching prototype",
           },
         ]}
         annotation={{
-          note: "Note 02 / Why",
+          note: "Why I built it",
           quote:
             "I watched students light up when the right person explained something the right way. BeLearn is about making that match happen.",
         }}
         nextHref="/work/unifeed"
-        nextLabel="01 / Unifeed"
+        nextLabel="Unifeed"
       >
-        <figure className="border border-border bg-paper overflow-hidden">
+        <figure className="rounded-2xl border border-border bg-paper overflow-hidden">
           <div className="border-b border-border px-4 py-2 flex items-center justify-between bg-secondary/40">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
@@ -58,11 +60,15 @@ export function WeLearnCasePage() {
             loading="lazy"
           />
           <figcaption className="px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border">
-            Live at belearn.org. 100+ waitlist signups across 28 countries, before any paid acquisition.
+            Live at belearn.org. 100+ waitlist signups before launch.
           </figcaption>
         </figure>
 
         <CaseSection num="01" title="The Problem">
+          <p>
+            BeLearn is a STEM and AI learning platform for young people. It starts from a problem I saw up
+            close while teaching.
+          </p>
           <p>
             Tutoring quietly fails the very families who need it most. The same four frustrations kept coming
             up: a tutor who does not really understand the child's pace, background, or way of learning; a
@@ -95,7 +101,7 @@ export function WeLearnCasePage() {
               your potential should not be limited by your postcode, your background, or your budget.
             </span>
           </p>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border mt-2">
+          <div className="grid md:grid-cols-3 gap-px bg-border border border-border rounded-2xl overflow-hidden mt-2">
             {[
               {
                 n: "01",
@@ -127,10 +133,8 @@ export function WeLearnCasePage() {
         <CaseSection num="03" title="Discovery and Validation">
           <p>
             The waitlist is not a vanity number. It is a live demand-validation instrument. 100+ signups
-            from 28 countries before launch
-            <ConfirmTodo note="add channel mix, e.g. organic vs paid" />
-            is strong evidence that the relatability and affordability wedge lands internationally, not just
-            at home.
+            before launch is early evidence that the relatability and affordability wedge lands with
+            families.
           </p>
           <p>
             My read on the problem also comes from lived experience: I have taught coders aged 6 to 18, and
@@ -144,7 +148,7 @@ export function WeLearnCasePage() {
           <p>
             Even before launch, the operating model demands the same reasoning a PM does every day.
           </p>
-          <div className="space-y-px bg-border border border-border mt-2">
+          <div className="space-y-px bg-border border border-border rounded-2xl overflow-hidden mt-2">
             {[
               {
                 label: "Roadmap and sequencing",
@@ -179,7 +183,7 @@ export function WeLearnCasePage() {
             Writing requirements is not a formality. It is how you expose what you have not thought through.
             Here is one from BeLearn:
           </p>
-          <div className="border border-border bg-paper overflow-hidden mt-2">
+          <div className="rounded-2xl border border-border bg-paper overflow-hidden mt-2">
             <div className="border-b border-border px-4 py-2 bg-secondary/40">
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                 Feature · Hand-matched tutor recommendation (v1, manual-first)
@@ -226,9 +230,35 @@ export function WeLearnCasePage() {
           </div>
         </CaseSection>
 
-        <CaseSection num="06" title="Where It Stands">
+        <CaseSection num="06" title="What I Have Built So Far">
+          <div className="space-y-px bg-border border border-border rounded-2xl overflow-hidden mt-2">
+            {[
+              {
+                label: "Unit economics model",
+                body: "Modelled 6 price points: LTV of £419 to £978 per student, a CAC ceiling, and 17 to 24 students needed to reach £3k MRR.",
+              },
+              {
+                label: "Agentic AI email agent",
+                body: "Built with Claude Code. It decides which schools to contact, sends and replies autonomously, and logs every action.",
+              },
+              {
+                label: "LLM matching layer",
+                body: "Prototyping a layer that pairs learners with tutors by subject, learning need and SEN requirement.",
+              },
+            ].map((block) => (
+              <div key={block.label} className="bg-background p-6 space-y-2">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                  {block.label}
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">{block.body}</p>
+              </div>
+            ))}
+          </div>
+        </CaseSection>
+
+        <CaseSection num="07" title="Where It Stands">
           <p>
-            Before launch, BeLearn has already proved international demand for a model the incumbents do not
+            Before launch, BeLearn has already shown real demand for a model the incumbents do not
             offer. The near-term priorities are clear: convert the waitlist into activated first sessions,
             instrument match quality so I can prove the hand-match beats self-serve, and turn the manual
             matching logic into something repeatable.{" "}
@@ -236,7 +266,7 @@ export function WeLearnCasePage() {
           </p>
         </CaseSection>
 
-        <figure className="border border-border bg-paper overflow-hidden">
+        <figure className="rounded-2xl border border-border bg-paper overflow-hidden">
           <img
             src={belearnFeature}
             alt="BeLearn feature section showing global relatable tutors and smart matching paired by how each learner learns best."
@@ -248,7 +278,7 @@ export function WeLearnCasePage() {
           </figcaption>
         </figure>
 
-        <div className="border border-border bg-paper/60 p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="rounded-2xl border border-border bg-paper p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
               Live preview
@@ -259,7 +289,7 @@ export function WeLearnCasePage() {
             href="https://belearn.org"
             target="_blank"
             rel="noopener"
-            className="px-5 py-2.5 bg-foreground text-background font-mono text-xs uppercase tracking-widest hover:bg-accent transition-colors"
+            className="btn btn-primary"
           >
             Visit site ↗
           </a>

@@ -1,58 +1,36 @@
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { CV_URL } from "../lib/site";
+
+const links = [
+  { href: "/#work", label: "Work" },
+  { href: "/#process", label: "How I work" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#contact", label: "Contact" },
+];
 
 export function SiteNav() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  function goToWork(e: React.MouseEvent) {
-    e.preventDefault();
-    if (location.pathname === "/") {
-      document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/#work");
-    }
-  }
-
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          to="/"
-          className="font-mono text-xs tracking-tight uppercase font-bold hover:text-accent transition-colors"
-        >
-          Boluwatife (Tife) <span className="text-muted-foreground">/ Portfolio 2026</span>
+    <nav className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-border">
+      <div className="max-w-6xl mx-auto px-5 md:px-6 h-16 flex items-center justify-between gap-4">
+        <Link to="/" className="font-display font-bold text-lg tracking-tight flex items-baseline gap-1">
+          Tife Olusina<span className="text-pink text-2xl leading-none">.</span>
         </Link>
-        <div className="flex gap-6 md:gap-8 font-mono text-[11px] uppercase tracking-wider">
+        <div className="flex items-center gap-5 md:gap-7 text-sm font-medium">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              to={l.href}
+              className={`hover:text-accent transition-colors ${l.label === "Work" || l.label === "Contact" ? "hidden sm:inline" : "hidden md:inline"}`}
+            >
+              {l.label}
+            </Link>
+          ))}
           <a
-            href="/#work"
-            onClick={goToWork}
-            className="hover:text-accent transition-colors text-foreground"
+            href={CV_URL}
+            download
+            className="btn btn-primary !py-2 !px-4 !text-sm"
           >
-            Projects
-          </a>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `hover:text-accent transition-colors ${isActive ? "text-accent" : ""}`
-            }
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `hover:text-accent transition-colors ${isActive ? "text-accent" : ""}`
-            }
-          >
-            Contact
-          </NavLink>
-          <a
-            href="/Tife_Boluwatife_CV.pdf"
-            target="_blank"
-            rel="noopener"
-            className="hidden md:inline-block hover:text-accent transition-colors"
-          >
-            CV ↗
+            CV <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>

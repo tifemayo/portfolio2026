@@ -19,6 +19,7 @@ export function CaseStudyShell({
   nextHref,
   nextLabel,
 }: {
+  /** Project name shown above the title */
   fileNumber: string;
   status: string;
   statusTone: "accent" | "muted";
@@ -27,91 +28,83 @@ export function CaseStudyShell({
   meta: MetaItem[];
   annotation?: { note: string; quote: string };
   children: ReactNode;
-  nextHref: "/work/unifeed" | "/work/welearn";
+  nextHref: "/work/unifeed" | "/work/belearn";
   nextLabel: string;
 }) {
+  const field = statusTone === "accent" ? "bg-sky" : "bg-blush";
   return (
-    <article className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-      {/* Header */}
-      <header className="border-b border-border pb-12 mb-12">
-        <div className="flex items-center gap-4 mb-8">
-          <Link
-            to="/#work"
-            className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors"
-          >
-            ← Projects
-          </Link>
-          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            File {fileNumber}
-          </span>
-          <span
-            className={
-              statusTone === "accent"
-                ? "px-2 py-0.5 bg-accent/10 text-accent font-mono text-[10px] uppercase font-bold tracking-wider"
-                : "px-2 py-0.5 bg-foreground/5 text-muted-foreground font-mono text-[10px] uppercase font-bold tracking-wider"
-            }
-          >
-            {status}
-          </span>
+    <article>
+      {/* Header: one colour field per project */}
+      <header className={`${field}`}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6 pt-10 md:pt-14 pb-12 md:pb-16">
+          <div className="flex flex-wrap items-center gap-3 mb-8 text-sm font-semibold">
+            <Link to="/#work" className="hover:underline underline-offset-4">
+              ← All work
+            </Link>
+            <span className="opacity-40" aria-hidden="true">
+              ·
+            </span>
+            <span>{fileNumber}</span>
+            <span className="rounded-full bg-ink text-background px-3 py-1 text-xs">{status}</span>
+          </div>
+          <h1 className="font-extrabold tracking-tight text-4xl md:text-6xl leading-[1.03] mb-6 text-balance max-w-[18ch] animate-reveal">
+            {title}
+          </h1>
+          <p className="text-xl md:text-2xl leading-snug font-medium max-w-[52ch] text-pretty animate-reveal opacity-85">
+            {subtitle}
+          </p>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-balance animate-reveal">
-          {title}
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-[52ch] text-pretty animate-reveal">
-          {subtitle}
-        </p>
       </header>
 
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 pb-24">
-        {/* Sidebar */}
-        <aside className="lg:col-span-4 order-2 lg:order-1">
-          <div className="lg:sticky lg:top-24 space-y-10">
-            <div className="border border-border bg-paper/60 p-6 space-y-5">
-              {meta.map((m) => (
-                <div key={m.label} className="space-y-1">
-                  <div className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">
-                    {m.label}
+      <div className="max-w-6xl mx-auto px-5 md:px-6 pt-12 md:pt-16">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 pb-20">
+          {/* Sidebar */}
+          <aside className="lg:col-span-4 order-2 lg:order-1">
+            <div className="lg:sticky lg:top-24 space-y-8">
+              <div className="rounded-2xl border border-border bg-paper p-6 space-y-5">
+                {meta.map((m) => (
+                  <div key={m.label} className="space-y-1">
+                    <div className="eyebrow">{m.label}</div>
+                    <div
+                      className={
+                        m.emphasis
+                          ? "font-semibold text-accent"
+                          : "font-medium leading-relaxed"
+                      }
+                    >
+                      {m.value}
+                    </div>
                   </div>
-                  <div
-                    className={
-                      m.emphasis
-                        ? "text-sm font-semibold text-accent"
-                        : "text-sm font-medium leading-relaxed"
-                    }
-                  >
-                    {m.value}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {annotation && (
-              <div className="pl-4 border-l-2 border-accent/30">
-                <div className="font-mono text-[10px] uppercase text-accent font-bold tracking-widest">
-                  {annotation.note}
-                </div>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed italic">
-                  &ldquo;{annotation.quote}&rdquo;
-                </p>
+                ))}
               </div>
-            )}
-          </div>
-        </aside>
 
-        {/* Main content */}
-        <div className="lg:col-span-8 order-1 lg:order-2 space-y-14">{children}</div>
-      </div>
+              {annotation && (
+                <div className="pl-5 border-l-[3px] border-pink">
+                  <div className="eyebrow !text-accent">{annotation.note}</div>
+                  <p className="text-lg mt-2 leading-relaxed font-medium">
+                    &ldquo;{annotation.quote}&rdquo;
+                  </p>
+                </div>
+              )}
+            </div>
+          </aside>
 
-      {/* Next */}
-      <div className="border-t border-border py-12 flex items-center justify-between">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          Next project
-        </span>
+          {/* Main content */}
+          <div className="lg:col-span-8 order-1 lg:order-2 space-y-14">{children}</div>
+        </div>
+
+        {/* Next */}
         <Link
           to={nextHref}
-          className="text-2xl md:text-3xl font-bold tracking-tight hover:text-accent transition-colors"
+          className="group mb-20 flex items-center justify-between gap-6 rounded-[1.75rem] bg-ink text-background px-7 md:px-12 py-9 md:py-12 hover:bg-accent transition-colors"
         >
-          {nextLabel} →
+          <span className="eyebrow !text-background/70">Next project</span>
+          <span className="font-display font-extrabold tracking-tight text-3xl md:text-5xl">
+            {nextLabel}{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-2" aria-hidden="true">
+              →
+            </span>
+          </span>
         </Link>
       </div>
     </article>
@@ -129,9 +122,10 @@ export function CaseSection({
 }) {
   return (
     <section className="space-y-5">
-      <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-        {num} / {title}
-      </div>
+      <h2 className="flex items-baseline gap-3 font-extrabold tracking-tight text-2xl md:text-3xl">
+        <span className="text-accent text-lg tabular-nums">{num}</span>
+        {title}
+      </h2>
       <div className="space-y-4 text-lg leading-relaxed text-foreground/90">{children}</div>
     </section>
   );
@@ -143,19 +137,15 @@ export function DataPanel({
   items: { value: string; label: string }[];
 }) {
   return (
-    <div className="bg-foreground text-background p-8 md:p-10">
-      <div className="font-mono text-[10px] uppercase tracking-widest text-background/60 mb-6">
-        Validation Data
-      </div>
+    <div className="rounded-[1.75rem] bg-ink text-background p-8 md:p-10">
+      <div className="eyebrow !text-background/60 mb-6">Results</div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {items.map((it) => (
           <div key={it.label}>
-            <div className="text-3xl md:text-5xl font-bold mb-2 tracking-tighter tabular-nums">
+            <div className="font-display text-3xl md:text-5xl font-extrabold mb-2 tracking-tight tabular-nums">
               {it.value}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-background/60">
-              {it.label}
-            </div>
+            <div className="text-sm text-background/70">{it.label}</div>
           </div>
         ))}
       </div>
@@ -173,33 +163,16 @@ export function ProductMockCard({
   rows: { tag: string; text: string }[];
 }) {
   return (
-    <div className="border border-border bg-paper">
-      <div className="border-b border-border px-4 py-2 flex items-center justify-between bg-secondary/50">
-        <div className="flex gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
-          <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
-          <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
-        </div>
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {label}
-        </span>
-        <span className="font-mono text-[10px] text-muted-foreground">v1.0</span>
-      </div>
+    <div className="rounded-2xl border border-border bg-paper overflow-hidden">
+      <div className="border-b border-border px-5 py-3 bg-secondary/50 font-semibold text-sm">{label}</div>
       <div className="p-6 md:p-8 space-y-3">
         {rows.map((r, i) => (
-          <div
-            key={i}
-            className="flex items-start gap-4 py-3 border-b border-border last:border-0"
-          >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-accent w-16 shrink-0 pt-1">
-              {r.tag}
-            </span>
+          <div key={i} className="flex items-start gap-4 py-3 border-b border-border last:border-0">
+            <span className="eyebrow !text-accent w-16 shrink-0 pt-1">{r.tag}</span>
             <span className="text-sm text-foreground/80 leading-relaxed">{r.text}</span>
           </div>
         ))}
-        <div className="pt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {caption}
-        </div>
+        <div className="pt-4 text-sm text-muted-foreground">{caption}</div>
       </div>
     </div>
   );
@@ -217,21 +190,14 @@ export function ResultsTable({
   caption?: string;
 }) {
   return (
-    <div className="border border-border bg-paper overflow-hidden">
-      <div className="border-b border-border px-4 py-2 bg-secondary/40">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {label}
-        </span>
-      </div>
+    <div className="rounded-2xl border border-border bg-paper overflow-hidden">
+      <div className="border-b border-border px-5 py-3 bg-secondary/50 font-semibold text-sm">{label}</div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border">
               {columns.map((col) => (
-                <th
-                  key={col}
-                  className="px-4 py-3 text-left font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-normal"
-                >
+                <th key={col} className="px-5 py-3 text-left eyebrow font-semibold">
                   {col}
                 </th>
               ))}
@@ -239,9 +205,9 @@ export function ResultsTable({
           </thead>
           <tbody>
             {rows.map((row, i) => (
-              <tr key={i} className="border-b border-border last:border-0 hover:bg-secondary/20 transition-colors">
+              <tr key={i} className="border-b border-border last:border-0 hover:bg-secondary/30 transition-colors">
                 {row.map((cell, j) => (
-                  <td key={j} className="px-4 py-3 leading-relaxed">
+                  <td key={j} className="px-5 py-3 leading-relaxed">
                     {cell}
                   </td>
                 ))}
@@ -251,18 +217,16 @@ export function ResultsTable({
         </table>
       </div>
       {caption && (
-        <div className="px-4 py-3 border-t border-border font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {caption}
-        </div>
+        <div className="px-5 py-3 border-t border-border text-sm text-muted-foreground">{caption}</div>
       )}
     </div>
   );
 }
 
-export function ConfirmTodo({ note }: { note: string }) {
-  return (
-    <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-accent/10 border border-accent/25 text-accent font-mono text-[9px] uppercase tracking-widest ml-1.5 align-middle">
-      TODO · {note}
-    </span>
-  );
+/**
+ * Marks a spot in a case study where a figure still needs confirming.
+ * Renders nothing, so visitors never see it; search the code for ConfirmTodo to find them.
+ */
+export function ConfirmTodo(_props: { note: string }) {
+  return null;
 }

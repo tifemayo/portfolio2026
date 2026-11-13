@@ -13,34 +13,34 @@ export function UnifeedCasePage() {
   return (
     <>
       <Seo
-        title="Unifeed: a unified social media platform · Tife Boluwatife"
+        title="Unifeed: a unified social media platform · Tife Olusina"
         description="Case study: Unifeed went from a personal frustration to a validated MVP with 75 real users, roughly 50% less platform-switching time, and a 4.5+/5 satisfaction score."
-        ogTitle="Unifeed Case Study · Tife Boluwatife"
+        ogTitle="Unifeed Case Study · Tife Olusina"
         ogDescription="From a user frustration to a validated product with 75 real users."
       />
       <CaseStudyShell
-        fileNumber="01 / Unifeed"
+        fileNumber="Unifeed"
         status="Shipped & Validated"
         statusTone="accent"
         title="Unifeed: from a user frustration to a validated product."
         subtitle="A unified social media platform that cut platform-switching time roughly in half, built end to end and tested with 75 real users."
         meta={[
           { label: "Role", value: "Sole Product Owner, Researcher, Builder" },
-          { label: "Timeline", value: "13 sprints, Oct 2024 to May 2025" },
+          { label: "Timeline", value: "Sept 2024 to May 2025" },
           { label: "Scope", value: "Discovery, scoping, build, usability testing, validation" },
-          { label: "Research base", value: "75 users · 25+ interviews" },
+          { label: "Research base", value: "75 users · 15+ discovery interviews" },
           { label: "Core outcome", value: "~50% reduction in platform-switching time", emphasis: true },
           { label: "Satisfaction", value: "4.5+ / 5 average across core tasks" },
         ]}
         annotation={{
-          note: "Note 04 / Discovery",
+          note: "What discovery taught me",
           quote:
             "The MVP I shipped looked nothing like my original idea. That's exactly how it should work.",
         }}
-        nextHref="/work/welearn"
-        nextLabel="02 / BeLearn"
+        nextHref="/work/belearn"
+        nextLabel="BeLearn"
       >
-        <figure className="border border-border bg-paper overflow-hidden">
+        <figure className="rounded-2xl border border-border bg-paper overflow-hidden">
           <div className="border-b border-border px-4 py-2 flex items-center justify-between bg-secondary/40">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
@@ -105,7 +105,7 @@ export function UnifeedCasePage() {
 
         <CaseSection num="03" title="Discovery">
           <p>I did not trust my own hunch. I triangulated across three sources.</p>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border mt-2">
+          <div className="grid md:grid-cols-3 gap-px bg-border border border-border rounded-2xl overflow-hidden mt-2">
             {[
               {
                 n: "01",
@@ -144,7 +144,7 @@ export function UnifeedCasePage() {
             I converted the research into a MoSCoW-prioritised requirement set, each item paired with a
             measurable acceptance criterion rather than a vague wish.
           </p>
-          <div className="grid md:grid-cols-2 gap-px bg-border border border-border mt-2">
+          <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded-2xl overflow-hidden mt-2">
             {[
               {
                 priority: "Must have",
@@ -228,7 +228,7 @@ export function UnifeedCasePage() {
         </CaseSection>
 
         <div className="grid md:grid-cols-2 gap-4">
-          <figure className="border border-border bg-paper overflow-hidden">
+          <figure className="rounded-2xl border border-border bg-paper overflow-hidden">
             <img
               src={unifeedProfile}
               alt="Unifeed profile screen consolidating social identity across networks."
@@ -239,7 +239,7 @@ export function UnifeedCasePage() {
               Profile · one identity, every platform
             </figcaption>
           </figure>
-          <figure className="border border-border bg-paper overflow-hidden">
+          <figure className="rounded-2xl border border-border bg-paper overflow-hidden">
             <img
               src={unifeedSearch}
               alt="Unifeed cross-platform search results aggregated from TikTok, Instagram, and Unifeed."
@@ -335,7 +335,7 @@ export function UnifeedCasePage() {
         <DataPanel
           items={[
             { value: "75", label: "Active testers" },
-            { value: "25+", label: "User interviews" },
+            { value: "15+", label: "Discovery interviews" },
             { value: "~50%", label: "Switching time cut" },
             { value: "4.5/5", label: "Avg satisfaction" },
           ]}

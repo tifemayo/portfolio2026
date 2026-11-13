@@ -1,10 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
-
-const queryClient = new QueryClient();
+import { ChatWidget } from "./ChatWidget";
 
 function ScrollToHash() {
   const { hash, pathname } = useLocation();
@@ -26,15 +24,14 @@ function ScrollToHash() {
 
 export function Layout() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-accent/20 selection:text-foreground">
-        <ScrollToHash />
-        <SiteNav />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <SiteFooter />
-      </div>
-    </QueryClientProvider>
+    <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-pink/25 selection:text-foreground">
+      <ScrollToHash />
+      <SiteNav />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <SiteFooter />
+      <ChatWidget />
+    </div>
   );
 }
