@@ -22,11 +22,11 @@ export function Hero() {
           </div>
 
           <h1
-            className="animate-reveal font-extrabold tracking-tight leading-[1.02] text-[2.3rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] 2xl:text-[4.3rem]"
+            className="animate-reveal font-extrabold tracking-tight leading-[1.02] text-[2.3rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] 2xl:text-[4.3rem] text-balance"
             style={{ animationDelay: "80ms" }}
           >
             I turn user problems into products that{" "}
-            <span className="script script-in block w-fit text-[2.1em] -mt-[0.2em] ml-[2.1em]">ship</span>
+            <span className="script script-in text-[1.2em] ml-[0.08em]">ship</span>
           </h1>
 
           <p
@@ -68,7 +68,7 @@ export function Hero() {
 
         {/* The story of an idea getting shipped, straight on the page with room to move */}
         <div className="animate-reveal" style={{ animationDelay: "200ms" }}>
-          <div className="canvas-frame bg-sky mx-1.5 mt-1.5 px-4 py-6 md:px-6 md:py-8 flex justify-center">
+          <div className="canvas-frame overflow-hidden bg-sky mx-1.5 mt-1.5 px-4 py-6 md:px-6 md:py-8">
             <ShipStory />
           </div>
         </div>
@@ -84,8 +84,8 @@ function ShipStory() {
   return (
     <svg
       ref={ref}
-      viewBox="205 -215 1205 1045"
-      className="idea-story block w-full h-auto lg:max-h-[calc(100svh-13rem)]"
+      viewBox="180 -240 1255 1090"
+      className="idea-story block mx-auto w-full h-auto aspect-[1255/1090] lg:max-h-[calc(100vh-13rem)]"
       role="img"
       aria-label="Tife has an idea, pushes it through research, planning, design, build and testing, and ships it."
     />
