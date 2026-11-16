@@ -503,9 +503,9 @@
 .idea-story {
   --ink: #3b2c1c;
   --paper: #fff7ea;
-  --card: #c2dfeb;
-  --line: #3b2c1c59;
-  --spark: #eb448b;
+  --card: #f3e7b6;
+  --line: #fff7ea;
+  --spark: #fff7ea;
   --accent: #f7b733;
   --skin: #7b4a2d;
   --skin-far: #633a21;
@@ -515,7 +515,7 @@
   --trouser: #3b2c1c;
   --trouser-far: #2e2216;
   --shoe: #fff7ea;
-  --shoe-edge: #3b2c1c;
-  --shadow: #e6dcc8;
+  --shoe-edge: transparent;
+  --shadow: #abc1c8;
   overflow: visible;
 }

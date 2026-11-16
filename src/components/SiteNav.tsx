@@ -11,7 +11,7 @@ const links = [
 export function SiteNav() {
   return (
     <nav className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-5 md:px-6 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-6xl 2xl:max-w-[88rem] mx-auto px-5 md:px-6 h-16 flex items-center justify-between gap-4">
         <Link to="/" className="font-display font-bold text-lg tracking-tight flex items-baseline gap-1">
           Tife Olusina<span className="text-pink text-2xl leading-none">.</span>
         </Link>

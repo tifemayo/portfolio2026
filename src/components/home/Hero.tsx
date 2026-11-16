@@ -10,9 +10,9 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="max-w-6xl mx-auto px-5 md:px-6 pt-12 md:pt-20 pb-16 md:pb-24">
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-        <div className="lg:col-span-5">
+    <section className="max-w-6xl 2xl:max-w-[88rem] mx-auto px-5 md:px-6 pt-12 md:pt-16 pb-16 md:pb-24">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 2xl:gap-16 items-center lg:items-start">
+        <div>
           <div className="animate-reveal inline-flex items-center gap-2.5 rounded-full bg-paper border border-border px-4 py-1.5 text-sm font-medium mb-8">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-pink opacity-60 animate-ping" />
@@ -22,15 +22,15 @@ export function Hero() {
           </div>
 
           <h1
-            className="animate-reveal font-extrabold tracking-tight leading-[0.98] text-[2.7rem] sm:text-6xl lg:text-[4.1rem] text-balance"
+            className="animate-reveal font-extrabold tracking-tight leading-[1.02] text-[2.3rem] sm:text-5xl lg:text-[3.1rem] xl:text-[3.5rem] 2xl:text-[4.3rem]"
             style={{ animationDelay: "80ms" }}
           >
             I turn user problems into products that{" "}
-            <span className="script script-in text-[1.3em] ml-1">ship</span>
+            <span className="script script-in block w-fit text-[2.1em] -mt-[0.2em] ml-[2.1em]">ship</span>
           </h1>
 
           <p
-            className="animate-reveal mt-8 text-lg md:text-xl leading-relaxed text-muted-foreground max-w-[52ch] text-pretty"
+            className="animate-reveal mt-8 text-lg md:text-xl leading-relaxed text-muted-foreground max-w-[52ch] 2xl:text-[1.35rem] text-pretty"
             style={{ animationDelay: "160ms" }}
           >
             I&apos;m Tife, a product manager and First Class Computer Science graduate. I&apos;ve taken five
@@ -67,8 +67,8 @@ export function Hero() {
         </div>
 
         {/* The story of an idea getting shipped, straight on the page with room to move */}
-        <div className="lg:col-span-7 animate-reveal" style={{ animationDelay: "200ms" }}>
-          <div className="lg:-ml-6 lg:-mr-5 xl:-mr-16 2xl:-mr-24">
+        <div className="animate-reveal" style={{ animationDelay: "200ms" }}>
+          <div className="canvas-frame bg-sky mx-1.5 mt-1.5 px-4 py-6 md:px-6 md:py-8 flex justify-center">
             <ShipStory />
           </div>
         </div>
@@ -84,8 +84,8 @@ function ShipStory() {
   return (
     <svg
       ref={ref}
-      viewBox="190 -810 1770 1640"
-      className="idea-story block w-full h-auto"
+      viewBox="205 -215 1205 1045"
+      className="idea-story block w-full h-auto lg:max-h-[calc(100svh-13rem)]"
       role="img"
       aria-label="Tife has an idea, pushes it through research, planning, design, build and testing, and ships it."
     />

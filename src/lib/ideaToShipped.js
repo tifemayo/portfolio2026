@@ -223,7 +223,7 @@ export function mountIdeaToShipped(svg, speed = 1) {
   }
   const burst = [-158, -128, -96, -64].map(a => ({ a: a * Math.PI / 180, e: el('line', Object.assign({}, soft, { 'stroke-width': 6 }), gProps) }));
   const STAR = 'M0 -18 Q2.5 -2.5 18 0 Q2.5 2.5 0 18 Q-2.5 2.5 -18 0 Q-2.5 -2.5 0 -18 Z';
-  const stars = [[1400, -720, .95], [1915, -700, 1.3], [1925, -300, .9], [1560, -215, .75]].map((s, i) =>
+  const stars = [[1050, -150, .8], [1375, -140, 1.1], [1385, 130, .75], [985, 120, .6]].map((s, i) =>
     ({ x: s[0], y: s[1], s: s[2], i, e: el('path', { d: STAR, fill: 'var(--spark)' }, gProps) }));
 
   // question mark, bulb, rays, whoosh
@@ -242,13 +242,13 @@ export function mountIdeaToShipped(svg, speed = 1) {
   const pushJ = (() => { const p = POSE.push; return V((p.hLx + p.hRx) / 2, (p.hLy + p.hRy) / 2); })();
   const CARD_OFF = V(60, -4);
   // idea -> users -> plan -> design -> build -> test -> SHIPPED -> measure
-  const C = [add(pushJ, CARD_OFF), V(848, 282), V(976, 154), V(1104, 26), V(1232, -102), V(1360, -230), V(1660, -495), V(1770, -215)];   // a steep climb to the big finish
+  const C = [add(pushJ, CARD_OFF), V(826, 345), V(920, 299), V(1014, 253), V(1108, 207), V(1202, 161), V(1200, 0), V(1318, 215)];   // a steep climb to the big finish
   const ROT = [-7, 8, -6, 7, -8, 6, -4, 7];
-  const BASE = [1.05, 1.18, 1.18, 1.18, 1.18, 1.18, 1.6, 1.18];
+  const BASE = [.8, .77, .77, .77, .77, .77, 1, .77];
   const POP = [null, 5.78, 6.4, 7.02, 7.64, 8.26, 9.9, 11.2];             // when each station pops
   const OUT = [16.7, 16.6, 16.5, 16.4, 16.3, 16.2, 16.08, 16.0];          // when each leaves
   const END = 16.0;                                                        // exit begins
-  const trims = [[70, 78], [78, 78], [78, 78], [78, 78], [78, 78], [78, 322], [195, 78]];
+  const trims = [[48, 46], [46, 46], [46, 46], [46, 46], [46, 46], [46, 130], [140, 50]];
 
   function setT(g, x, y, rot, sx, sy) {
     g.setAttribute('transform', 'translate(' + f(x) + ' ' + f(y) + ') rotate(' + f(rot || 0) + ') scale(' + (sx == null ? 1 : sx).toFixed(3) + ' ' + (sy == null ? (sx == null ? 1 : sx) : sy).toFixed(3) + ')');
@@ -367,7 +367,7 @@ export function mountIdeaToShipped(svg, speed = 1) {
     const bIn2 = E.back(seg(t, 10.07, 10.52)), bOut = 1 - seg(t, END, END + .25), bp2 = 1 + .1 * wave(t, 18);
     burst.forEach(bu => {
       const c = Math.cos(bu.a), s = Math.sin(bu.a), R0 = 1.0 + .16 * bIn2, len0 = 26 * bIn2 * bp2;
-      const x0 = C[6].x + c * 316 * R0, y0 = wy + s * 237 * R0;
+      const x0 = C[6].x + c * 198 * R0, y0 = wy + s * 148 * R0;
       bu.e.setAttribute('x1', f(x0)); bu.e.setAttribute('y1', f(y0));
       bu.e.setAttribute('x2', f(x0 + c * len0)); bu.e.setAttribute('y2', f(y0 + s * len0));
       bu.e.setAttribute('opacity', bOut.toFixed(2)); show(bu.e, t > 10.07 && bOut > 0 && bIn2 > 0.02);
