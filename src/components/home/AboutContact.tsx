@@ -11,7 +11,7 @@ export function About() {
           <div className="md:col-span-8 p-7 md:p-12">
             <div className="eyebrow !text-ink/70 mb-4">About me</div>
             <h2 className="font-extrabold tracking-tight text-3xl md:text-5xl leading-[1.05] text-balance">
-              I care more about <span className="script text-[1.6em] px-1 align-[-0.1em]">why</span> something
+              I care more about <span className="script text-[1.15em] mx-[0.1em]">why</span> something
               gets built than how. I can do both.
             </h2>
             <div className="mt-7 space-y-4 text-lg leading-relaxed max-w-[58ch]">
@@ -58,7 +58,7 @@ export function Contact() {
         <div className="canvas-frame bg-blush relative overflow-hidden mx-1.5 px-7 md:px-14 pt-12 md:pt-16 pb-44 md:pb-20">
           <div className="eyebrow !text-ink/70 mb-4">Contact</div>
           <h2 className="font-extrabold tracking-tight text-5xl md:text-7xl leading-[0.98]">
-            Let&apos;s <span className="script text-[1.7em] !text-ink px-2 align-[-0.1em]">talk</span>
+            Let&apos;s <span className="script text-[1.25em] !text-ink mx-[0.12em]">talk</span>
           </h2>
           <p className="mt-6 text-lg md:text-xl leading-relaxed max-w-[40ch] font-medium">
             Hiring for a product role, or want to hear more about something I&apos;ve built? My inbox is open.

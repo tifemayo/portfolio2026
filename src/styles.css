@@ -61,7 +61,7 @@
   --color-sand: var(--sand);
   --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", "Figtree", ui-sans-serif, system-ui, sans-serif;
-  --font-script: "Mrs Saint Delafield", "Brush Script MT", cursive;
+  --font-script: "Fraunces", Georgia, serif;
   /* Legacy labels used font-mono; keep them on the soft sans so nothing reads as a typewriter. */
   --font-mono: "Figtree", ui-sans-serif, system-ui, sans-serif;
 }
@@ -154,11 +154,16 @@
 }
 
 .script {
+  display: inline-block;
   font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 900;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
   color: var(--pink);
-  font-weight: 400;
-  line-height: 0.6;
-  letter-spacing: 0;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  transform: rotate(-4deg);
+  transform-origin: 30% 60%;
 }
 
 .btn {
@@ -220,18 +225,23 @@
   transform: none;
 }
 
-/* The pink script word writes itself in */
+/* The pink word lands on the headline like a stamp */
 @keyframes script-in {
-  from {
-    clip-path: inset(-20% 100% -40% 0);
+  0% {
+    opacity: 0;
+    transform: translateY(-0.5em) rotate(-14deg) scale(1.7);
   }
-  to {
-    clip-path: inset(-20% -10% -40% 0);
+  60% {
+    opacity: 1;
+    transform: translateY(0.03em) rotate(-2.5deg) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-4deg) scale(1);
   }
 }
 .script-in {
-  display: inline-block;
-  animation: script-in 1.1s 0.5s cubic-bezier(0.6, 0, 0.2, 1) both;
+  animation: script-in 0.7s 0.65s cubic-bezier(0.3, 0, 0.2, 1) both;
 }
 
 /* ---------- The character ---------- */
@@ -399,7 +409,7 @@
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .project-card:hover .shot {
-  transform: scale(1.03) rotate(-0.4deg);
+  transform: scale(1.012);
 }
 
 /* ---------- Marquee ---------- */
@@ -487,4 +497,25 @@
   .girl--wave .arm-front {
     transform: rotate(-112deg);
   }
+}
+
+/* ---------- Hero story animation (colours for lib/ideaToShipped.js) ---------- */
+.idea-story {
+  --ink: #3b2c1c;
+  --paper: #fff7ea;
+  --card: #c2dfeb;
+  --line: #3b2c1c59;
+  --spark: #eb448b;
+  --accent: #f7b733;
+  --skin: #7b4a2d;
+  --skin-far: #633a21;
+  --gold: #e0aa3e;
+  --hair: #1f1612;
+  --top: #eb448b;
+  --trouser: #3b2c1c;
+  --trouser-far: #2e2216;
+  --shoe: #fff7ea;
+  --shoe-edge: #3b2c1c;
+  --shadow: #e6dcc8;
+  overflow: visible;
 }

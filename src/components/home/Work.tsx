@@ -10,7 +10,7 @@ function SectionHeading({ eyebrow, title, script }: { eyebrow: string; title: st
       <div className="eyebrow mb-4">{eyebrow}</div>
       <h2 className="font-extrabold tracking-tight text-4xl md:text-6xl leading-[1.02] text-balance">
         {title}
-        {script && <span className="script text-[1.7em] pl-3 align-[-0.1em]">{script}</span>}
+        {script && <span className="script text-[1.25em] ml-[0.2em]">{script}</span>}
       </h2>
     </Reveal>
   );
@@ -46,9 +46,9 @@ function Featured({
 }) {
   return (
     <Reveal>
-      <Link to={to} className={`project-card group block rounded-[1.75rem] ${field} overflow-hidden`}>
-        <div className="grid lg:grid-cols-2 gap-0 items-stretch">
-          <div className={`p-7 md:p-11 flex flex-col ${reverse ? "lg:order-2" : ""}`}>
+      <Link to={to} className={`project-card group block rounded-[1.75rem] ${field} p-7 md:p-11`}>
+        <div className="grid lg:grid-cols-2 gap-7 lg:gap-14 lg:items-end">
+          <div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold">
               <span>{role}</span>
               <span className="opacity-40" aria-hidden="true">·</span>
@@ -56,37 +56,38 @@ function Featured({
             </div>
             <h3 className="mt-4 font-extrabold tracking-tight text-4xl md:text-6xl">{name}</h3>
             <p className="mt-4 text-lg md:text-xl leading-snug font-medium text-pretty max-w-[34ch]">{line}</p>
-            <ul className="mt-6 space-y-2.5 text-[0.95rem] leading-relaxed opacity-85 max-w-[46ch]">
-              {points.map((p) => (
-                <li key={p} className="flex gap-3">
-                  <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-ink" aria-hidden="true" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-            <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-ink/15 pt-6">
-              {metrics.map((m) => (
-                <div key={m.label}>
-                  <dt className="font-display font-extrabold text-2xl md:text-4xl tracking-tight tabular-nums">{m.value}</dt>
-                  <dd className="mt-1 text-xs md:text-sm opacity-75 leading-snug">{m.label}</dd>
-                </div>
-              ))}
-            </dl>
-            <span className="mt-8 inline-flex items-center gap-2 font-semibold">
-              <span className="border-b-2 border-ink pb-0.5">Read the case study</span>
-              <span className="transition-transform group-hover:translate-x-1.5" aria-hidden="true">→</span>
-            </span>
           </div>
-          <div className={`relative min-h-[240px] lg:min-h-[520px] overflow-hidden ${reverse ? "lg:order-1" : ""}`}>
-            <img
-              src={image}
-              alt={imageAlt}
-              loading="lazy"
-              className={`shot absolute top-10 lg:top-16 w-[112%] max-w-none rounded-xl shadow-2xl shadow-ink/25 border border-ink/10 ${
-                reverse ? "right-8 lg:right-10" : "left-8 lg:left-10"
-              }`}
-            />
-          </div>
+          <ul className="space-y-2.5 text-[0.95rem] leading-relaxed opacity-85">
+            {points.map((p) => (
+              <li key={p} className="flex gap-3">
+                <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-ink" aria-hidden="true" />
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* The whole screenshot at full card width, never cropped */}
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          className="shot mt-8 md:mt-10 block w-full h-auto rounded-xl md:rounded-2xl shadow-2xl shadow-ink/25 border border-ink/10"
+        />
+
+        <div className="mt-8 md:mt-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-7 border-t border-ink/15 pt-6">
+          <dl className="grid grid-cols-3 gap-4 md:gap-10">
+            {metrics.map((m) => (
+              <div key={m.label}>
+                <dt className="font-display font-extrabold text-2xl md:text-4xl tracking-tight tabular-nums">{m.value}</dt>
+                <dd className="mt-1 text-xs md:text-sm opacity-75 leading-snug">{m.label}</dd>
+              </div>
+            ))}
+          </dl>
+          <span className="inline-flex items-center gap-2 font-semibold">
+            <span className="border-b-2 border-ink pb-0.5">Read the case study</span>
+            <span className="transition-transform group-hover:translate-x-1.5" aria-hidden="true">→</span>
+          </span>
         </div>
       </Link>
     </Reveal>

@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Girl } from "../Character";
+import { useEffect, useRef } from "react";
+import { mountIdeaToShipped } from "../../lib/ideaToShipped";
 import { CV_URL, openChat } from "../../lib/site";
 
 const stats = [
@@ -9,34 +9,10 @@ const stats = [
 ];
 
 export function Hero() {
-  const stageRef = useRef<HTMLDivElement>(null);
-  // She walks in on load, then walks whenever the page is scrolling
-  const [walking, setWalking] = useState(true);
-
-  useEffect(() => {
-    const entry = window.setTimeout(() => setWalking(false), 2600);
-    let stop = 0;
-    const onScroll = () => {
-      const el = stageRef.current;
-      if (!el) return;
-      const progress = Math.min(1, window.scrollY / (window.innerHeight * 0.8));
-      el.style.setProperty("--walk-x", `${progress * el.clientWidth * 0.46}px`);
-      setWalking(true);
-      window.clearTimeout(stop);
-      stop = window.setTimeout(() => setWalking(false), 240);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.clearTimeout(entry);
-      window.clearTimeout(stop);
-    };
-  }, []);
-
   return (
     <section className="max-w-6xl mx-auto px-5 md:px-6 pt-12 md:pt-20 pb-16 md:pb-24">
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-        <div className="lg:col-span-7">
+      <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="lg:col-span-5">
           <div className="animate-reveal inline-flex items-center gap-2.5 rounded-full bg-paper border border-border px-4 py-1.5 text-sm font-medium mb-8">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-pink opacity-60 animate-ping" />
@@ -46,11 +22,11 @@ export function Hero() {
           </div>
 
           <h1
-            className="animate-reveal font-extrabold tracking-tight leading-[0.98] text-[2.7rem] sm:text-6xl lg:text-[4.6rem] text-balance"
+            className="animate-reveal font-extrabold tracking-tight leading-[0.98] text-[2.7rem] sm:text-6xl lg:text-[4.1rem] text-balance"
             style={{ animationDelay: "80ms" }}
           >
             I turn user problems into products that{" "}
-            <span className="script script-in text-[1.9em] font-normal pl-1 pr-3 align-[-0.08em]">ship</span>
+            <span className="script script-in text-[1.3em] ml-1">ship</span>
           </h1>
 
           <p
@@ -90,29 +66,34 @@ export function Hero() {
           </dl>
         </div>
 
-        {/* The painting: a big quiet field, one small figure */}
-        <div className="lg:col-span-5 animate-reveal" style={{ animationDelay: "200ms" }}>
-          <div
-            ref={stageRef}
-            className={`canvas-frame relative overflow-hidden bg-sky aspect-[16/11] lg:aspect-[4/5] mx-1.5 ${walking ? "is-walking" : ""}`}
-          >
-            <div className="absolute left-[16%] bottom-[9%] w-[20%] lg:w-[27%] walk-scroll">
-              <div className="walk-in">
-                <Girl className="girl-hop block w-full h-auto cursor-pointer" title="Illustration of Tife walking" />
-              </div>
-            </div>
+        {/* The story of an idea getting shipped, straight on the page with room to move */}
+        <div className="lg:col-span-7 animate-reveal" style={{ animationDelay: "200ms" }}>
+          <div className="lg:-ml-6 lg:-mr-5 xl:-mr-16 2xl:-mr-24">
+            <ShipStory />
           </div>
-          <p className="mt-4 mx-1.5 text-xs text-muted-foreground flex justify-between gap-4">
-            <span>
-              <span className="font-semibold text-foreground">Tife, on her way to ship something.</span> 2026
-            </span>
-            <span className="hidden sm:inline">Scroll and she walks</span>
-          </p>
         </div>
       </div>
     </section>
   );
 }
+
+/** The looping idea-to-shipped animation. The drawing itself lives in lib/ideaToShipped.js. */
+function ShipStory() {
+  const ref = useRef<SVGSVGElement>(null);
+  useEffect(() => (ref.current ? mountIdeaToShipped(ref.current, STORY_SPEED) : undefined), []);
+  return (
+    <svg
+      ref={ref}
+      viewBox="190 -810 1770 1640"
+      className="idea-story block w-full h-auto"
+      role="img"
+      aria-label="Tife has an idea, pushes it through research, planning, design, build and testing, and ships it."
+    />
+  );
+}
+
+// 1 = the original 18 second loop. 1.3 brings "SHIPPED!" in at about 8 seconds.
+const STORY_SPEED = 1.3;
 
 const marqueeItems = [
   "Deloitte",
